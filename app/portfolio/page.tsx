@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronUp,
-  Mail,
-  Github,
-  Linkedin,
   Code,
   Palette,
   Settings,
@@ -16,7 +13,12 @@ import {
   Layers,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Navbar } from "@/components/portfolio/Navbar";
+
+import AtTheRate from "@/public/icons/at-the-rate.svg";
+import Github from "@/public/icons/github.svg";
+import LinkedIn from "@/public/icons/linkedin.svg";
 
 export default function PortfolioPage() {
   const [portfolioFilter, setPortfolioFilter] = useState("ALL");
@@ -359,43 +361,42 @@ export default function PortfolioPage() {
         {/* <div className="bg-gradient-to-br from-gray-200 to-gray-300"></div> */}
         <Navbar />
         {/* Diagonal Split */}
-        <div className="relative h-full flex ">
+        <div className="flex h-screen">
           {/* Left Side - Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-1/2 flex flex-col justify-center  lg:pl-44 md:pl-28 pl-20"
+            className="w-1/2 pt-40  flex flex-col justify-center lg:pl-[13.2rem] md:pl-28 pl-20"
           >
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-base text-gray-600 mb-3"
+              className="text-3xl font-bold  mb-3"
             >
               Hi, I am
-              {/* <span className="font-bold text-black text-2xl lg:text-3xl">
-                Numan
-              </span> */}
             </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-2xl lg:text-5xl text-black font-bold mb-2"
-            >
-              Numan
-            </motion.h1>
+            <div className="pt-10 pb-20">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="lg:text-6xl text-2xl text-black font-bold mb-2"
+              >
+                Numan Akram
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-base text-gray-600 mb-8"
-            >
-              CEO of Softerio Solutions
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="text-xl text-[#909090] font-bold mb-8"
+              >
+                CEO of Softerio Solutions
+              </motion.p>
+            </div>
 
             {/* Social Icons */}
             <motion.div
@@ -405,27 +406,30 @@ export default function PortfolioPage() {
               className="flex space-x-6"
             >
               <a
-                href="mailto:hr@softeriosolutions.com"
-                className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-300 hover:scale-110"
+                href="mailto:mnumanakrambhatti@gmail.com"
+                className="w-[3.1rem] h-11 bg-[#C4C4C4] flex items-center justify-center hover:bg-gray-400 transition-all duration-300 hover:scale-110"
+                style={{ boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)" }}
               >
-                <Mail className="w-4 h-4 text-gray-700" />
+                <Image src={AtTheRate} alt="Email" className="w-7 h-7" />
               </a>
-              <a
+              <Link
                 href="https://github.com/muhammadnuman-eng"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-300 hover:scale-110"
+                className="w-[3.1rem] h-11 bg-[#C4C4C4] flex items-center justify-center hover:bg-gray-400 transition-all duration-300 hover:scale-110"
+                style={{ boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)" }}
               >
-                <Github className="w-4 h-4 text-gray-700" />
-              </a>
-              <a
+                <Image src={Github} alt="GitHub" className="w-7 h-7" />
+              </Link>
+              <Link
                 href="https://www.linkedin.com/company/softerio-solutions/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center hover:bg-gray-400 transition-all duration-300 hover:scale-110"
+                className="w-[3.1rem] h-11 bg-[#C4C4C4] flex items-center justify-center hover:bg-gray-400 transition-all duration-300 hover:scale-110"
+                style={{ boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)" }}
               >
-                <Linkedin className="w-4 h-4 text-gray-700" />
-              </a>
+                <Image src={LinkedIn} alt="LinkedIn" className="w-8 h-8" />
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -434,7 +438,7 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-3/5 bg-black relative overflow-hidden"
+            className="w-[77%] bg-black relative overflow-hidden"
             style={{
               clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)",
             }}
@@ -444,14 +448,14 @@ export default function PortfolioPage() {
               initial={{ scale: 1.1, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="w-full rounded-lg relative mx-10 pt-28"
+              className="w-full  flex items-end rounded-lg pt-20"
             >
               <Image
                 src="/images/Numan-bg-preview.png"
                 alt="Softerio Solutions"
                 width={100}
                 height={100}
-                className="w-[40rem] h-[35rem] object-contain"
+                className="w-[40rem] object-contain"
               />
             </motion.div>
 
@@ -472,40 +476,48 @@ export default function PortfolioPage() {
         </div>
 
         {/* Bottom Section - Black Background with Reduced Height */}
-        {/* <motion.div
+      </section>
+      <section className="bg-[#1D1D1D] text-white h-[34vh] bg-opacity-100 overflow-hidden">
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-0 left-0 right-0 bg-black text-white p-4"
+          className="grid grid-cols-12 gap-4 place-content-between"
         >
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-lg font-bold mb-2 tracking-wider">
+          <div className="col-span-8 py-9 pl-[4rem]">
+            <h3 className="text-2xl font-bold mb-2 tracking-wider">
               SOFTERIO SOLUTIONS
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <p className="text-gray-300 text-sm leading-relaxed">
-                We specialize in creating innovative web and mobile solutions
-                that drive business growth. Our team of experts delivers
-                cutting-edge technology solutions with a focus on user
-                experience and performance.
-              </p>
-              <div className="flex justify-end">
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("about")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-4 py-2 rounded-full border border-white text-sm"
-                >
-                  LEARN MORE
-                </button>
-              </div>
-            </div>
-          </div>
-        </motion.div> */}
-      </section>
+            <p className="text-gray-300 text-xs leading-relaxed py-4">
+            We specialize in creating innovative web and mobile solutions that
+              drive business growth. Our team of experts delivers cutting-edge
+              technology solutions with a focus on user experience and
+              performance.
+            </p>
 
+            <button
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className=" border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-4 py-2 border-l-2 border-r-2 text-sm"
+            >
+              READ MORE
+            </button>
+          </div>
+
+          <div className="col-span-4 flex justify-end">
+            <Image
+              className="w-[90%]"
+              src="/icons/logo-itb.svg"
+              alt="Softerio Solutions"
+              width={100}
+              height={100}
+            />
+          </div>
+        </motion.div>
+      </section>
       {/* About Section */}
       <section
         id="about"
