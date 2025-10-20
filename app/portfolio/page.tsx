@@ -373,7 +373,7 @@ export default function PortfolioPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-3xl font-bold  mb-3"
+              className="text-3xl text-black font-bold mb-3"
             >
               Hi, I am
             </motion.p>
